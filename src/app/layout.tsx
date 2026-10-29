@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "@/components/shared/Navbar";
 import { cn } from "@/lib/utils";
 import SocialSidebar from "@/components/SocialSidebar";
+import Footer from "@/components/Footer";
 
 const geist = Geist({subsets:['latin'],variable:'--font-sans'});
 
@@ -30,6 +31,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <main>
         {children}
         </main>
+        <Footer/>
         </body>
     </html>
   );
