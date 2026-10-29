@@ -3,6 +3,7 @@ import { Inter, Geist } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/shared/Navbar";
 import { cn } from "@/lib/utils";
+import SocialSidebar from "@/components/SocialSidebar";
 
 const geist = Geist({subsets:['latin'],variable:'--font-sans'});
 
@@ -25,8 +26,8 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     >
       <body className="min-h-full flex flex-col">
         <Navbar/>
+        <SocialSidebar/>
         <main>
-
         {children}
         </main>
         </body>
