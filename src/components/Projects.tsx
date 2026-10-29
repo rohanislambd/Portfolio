@@ -98,7 +98,7 @@ const Projects = () => {
   }, [selectedCategory]);
 
   return (
-    <section className="bg-[#0b1120] py-20 px-6 sm:px-8 lg:px-12 text-slate-100 min-h-screen">
+    <section id='projects' className="bg-[#0b1120] py-20 px-6 sm:px-8 lg:px-12 text-slate-100  border-b border-gray-900 ">
       <div className="mx-auto max-w-6xl">
         {/* Section Header */}
         <div className="text-center">
