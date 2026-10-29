@@ -1,20 +1,58 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { FaFileDownload, FaBars, FaTimes } from "react-icons/fa";
 
 const navLinks = [
   { name: "Home", href: "#home" },
   { name: "About", href: "#about" },
   { name: "Skills", href: "#skills" },
-  { name: "Projects", href: "#projects" },
   { name: "Education", href: "#education" },
+  { name: "Projects", href: "#projects" },
   { name: "Contact", href: "#contact" },
 ];
 
 const Navbar = () => {
   const [active, setActive] = useState("#home");
   const [open, setOpen] = useState(false);
+
+  useEffect(() => {
+    //  IntersectionObserver 
+    const observerCallback: IntersectionObserverCallback = (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          setActive(`#${entry.target.id}`);
+        }
+      });
+    };
+
+    const observerOptions: IntersectionObserverInit = {
+      root: null,
+      // rootMargin অ্
+      rootMargin: "-20% 0px -70% 0px", 
+      threshold: 0,
+    };
+
+    const observer = new IntersectionObserver(observerCallback, observerOptions);
+
+ 
+    navLinks.forEach((link) => {
+      const element = document.querySelector(link.href);
+      if (element) {
+        observer.observe(element);
+      }
+    });
+
+    
+    return () => {
+      navLinks.forEach((link) => {
+        const element = document.querySelector(link.href);
+        if (element) {
+          observer.unobserve(element);
+        }
+      });
+    };
+  }, []);
 
   return (
     <nav className="sticky top-0 z-50 bg-[#0F172A]/95 backdrop-blur-md border-b border-slate-800/70">
@@ -39,8 +77,8 @@ const Navbar = () => {
                 onClick={() => setActive(link.href)}
                 className={`px-3 py-2 rounded-lg text-sm font-medium transition-colors ${
                   active === link.href
-                    ? "text-[#06b6d4]  bg-[#3cb0c436]"
-                    : "text-slate-200  hover:text-cyan-400  hover:bg-slate-800/90 transition"
+                    ? "text-cyan-400 bg-slate-800/90"
+                    : "text-slate-200 hover:text-cyan-400 hover:bg-slate-800/90 transition"
                 }`}
               >
                 {link.name}
@@ -51,15 +89,15 @@ const Navbar = () => {
           {/* Resume button */}
           <div className="flex items-center gap-3">
             <a 
-            download={`Resume.pdf`}
-            href="/Resume.pdf
-            ">
-            <button className="relative inline-flex items-center justify-center p-0.5 overflow-hidden text-sm font-medium rounded-xl group bg-gradient-to-br from-cyan-500 to-purple-600 group-hover:from-cyan-500 group-hover:to-purple-600 hover:text-white text-white shadow-lg shadow-cyan-500/20 transition-all active:scale-95">
-              <span className="relative px-4 py-2 transition-all ease-in duration-75 rounded-lg bg-slate-900 group-hover:bg-transparent flex items-center gap-2">
-                <FaFileDownload className="text-cyan-400 group-hover:text-white transition-colors" />{" "}
-                Resume
-              </span>
-            </button>
+              download='resume.pdf'
+              href="/resume.pdf"
+            >
+              <button className="relative inline-flex items-center justify-center p-0.5 overflow-hidden text-sm font-medium rounded-xl group bg-gradient-to-br from-cyan-500 to-purple-600 group-hover:from-cyan-500 group-hover:to-purple-600 hover:text-white text-white shadow-lg shadow-cyan-500/20 transition-all active:scale-95">
+                <span className="relative px-4 py-2 transition-all ease-in duration-75 rounded-lg bg-slate-900 group-hover:bg-transparent flex items-center gap-2">
+                  <FaFileDownload className="text-cyan-400 group-hover:text-white transition-colors" />{" "}
+                  Resume
+                </span>
+              </button>
             </a>
             {/* Mobile toggle */}
             <button
@@ -86,8 +124,8 @@ const Navbar = () => {
               }}
               className={`block px-3 py-2 rounded-lg text-sm font-medium transition-colors ${
                 active === link.href
-                  ? "text-[#06b6d4]  bg-[#3cb0c436]"
-                  : "text-slate-200  hover:text-cyan-400  hover:bg-slate-800/90 transition"
+                  ? "text-cyan-400 bg-slate-800/90"
+                  : "text-slate-200 hover:text-cyan-400 hover:bg-slate-800/90 transition"
               }`}
             >
               {link.name}

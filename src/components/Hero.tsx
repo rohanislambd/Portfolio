@@ -29,9 +29,10 @@ const Hero = () => {
     delaySpeed: 1500,
   });
   return (
-    <section id="home" className="relative overflow-hidden bg-[#0F172A]  border-b border-gray-800 ">
-
-        
+    <section
+      id="home"
+      className="relative overflow-hidden bg-[#0F172A]  border-b border-gray-800 "
+    >
       {/* Background glows */}
       <div className="pointer-events-none absolute -top-40 -left-40 w-[420px] h-[420px] rounded-full bg-cyan-500/10 blur-[120px]" />
       <div className="pointer-events-none absolute -bottom-40 -right-20 w-[420px] h-[420px] rounded-full bg-purple-600/2 blur-[120px]" />
@@ -75,7 +76,7 @@ const Hero = () => {
             <div className="mt-9 flex flex-wrap items-center gap-4">
               <a
                 href="/resume.pdf"
-                download
+                download="resume.pdf"
                 className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-[#06b6d4] to-[#8b5cf6] text-white text-sm font-semibold shadow-lg shadow-cyan-500/25 hover:shadow-cyan-500/40 hover:-translate-y-0.5 transition-all"
               >
                 <FaDownload />
@@ -101,10 +102,11 @@ const Hero = () => {
               <div className="relative w-72 h-72 sm:w-96 sm:h-96 rounded-full p-1.5 bg-gradient-to-br from-[#06b6d4] via-slate-700 to-[#8b5cf6] shadow-[0_0_60px_rgba(6,182,212,0.3)] ">
                 <div className="relative  w-full h-full rounded-full overflow-hidden bg-slate-900">
                   <Image
-                    src="/heros.jpg"
-                    alt="Alex Rivera"
-                    fill
-                    sizes="(max-width: 640px) 288px, 384px"
+                    src="/hero.webp"
+                    alt="Rohan Islam - Frontend Engineer"
+                    width={1200}
+                    height={600}
+                    loading="eager"
                     className="object-cover object-center "
                   />
                 </div>
@@ -113,7 +115,6 @@ const Hero = () => {
           </div>
         </div>
       </div>
-      
     </section>
   );
 };

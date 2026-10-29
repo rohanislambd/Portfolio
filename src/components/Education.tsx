@@ -42,10 +42,10 @@ const education = [
 ]
 const educationContent = {
   subtitle: 'My academic background and professional learning journey in web development.',
-  title: 'Educational Qualification & Certifications',
+  title: 'Education & Qualifications',
 };
 
-const Educatiion = () => {
+const Education = () => {
   return (
     <section id="education" className="py-20 md:py-28 relative bg-[#0F172A] overflow-hidden">
       {/* Subtle ambient lighting behind header */}
@@ -138,4 +138,4 @@ const Educatiion = () => {
   );
 };
 
-export default Educatiion;
+export default Education;

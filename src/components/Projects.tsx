@@ -171,7 +171,7 @@ const Projects = () => {
                 <div className="mt-auto pt-6 flex items-center justify-between border-t border-slate-800/80">
                   <button
                     onClick={() => setActiveProject(project)}
-                    className="text-sm font-semibold text-[#00b4d8] transition-colors hover:text-[#38bdf8]"
+                    className="text-sm font-semibold text-[#00b4d8] transition-colors hover:text-white"
                   >
                     View Details &rarr;
                   </button>
@@ -191,7 +191,7 @@ const Projects = () => {
                       href={project.liveDemoUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="rounded-lg bg-[#00b4d8]/10 px-3 py-1.5 text-xs font-semibold text-[#00b4d8] hover:bg-[#00b4d8]/20 hover:text-white"
+                      className="rounded-lg bg-[#00b4d8]/10 px-3 py-1.5 text-xs font-semibold text-[#00b4d8] hover:bg-[#00b4d8]/20 text-white hover:text-white"
                     >
                       Live Demo
                     </a>

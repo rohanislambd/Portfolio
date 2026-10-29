@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaCode, FaHeart, FaPalette, FaLightbulb, FaBookOpen, FaLaptop } from 'react-icons/fa';
+import { FaCode, FaPalette, FaLightbulb, FaBookOpen, FaLaptop } from 'react-icons/fa';
 
 const aboutContent = {
   subtitle: "GET TO KNOW ME",

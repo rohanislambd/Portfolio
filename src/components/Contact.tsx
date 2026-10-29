@@ -1,50 +1,53 @@
-"use client"
-import { Mail, Phone, MessageCircle, MapPin, Send } from 'lucide-react';
+"use client";
+import { Mail, Phone, MessageCircle, MapPin, Send } from "lucide-react";
 
 const ContactSection = () => {
   // Bamer contact info gulo dynamic array hishebe rakha hoyeche
-const contactDetails = [
-  {
-    id: 1,
-    title: "DIRECT EMAIL",
-    value: "coderootbdofficial24@gmail.com",
-    link: "mailto:coderootbdofficial24@gmail.com",
-    icon: Mail,
-    iconColor: "text-cyan-400",
-    hasButton: false,
-  },
-  {
-    id: 2,
-    title: "PHONE CALL",
-    value: "+8801308477409",
-    link: "tel:+8801308477409",
-    icon: Phone,
-    iconColor: "text-purple-400",
-    hasButton: false,
-  },
-  {
-    id: 3,
-    title: "WHATSAPP CHAT",
-    value: "+8801308477409",
-    link: "https://wa.me/8801308477409",
-    icon: MessageCircle,
-    iconColor: "text-emerald-400",
-    hasButton: true,
-    buttonText: "Chat",
-  },
-  {
-    id: 4,
-    title: "LOCATION",
-    value: "Pabna, Rajshahi, Bangladesh",
-    link: "https://maps.google.com/?q=Pabna,+Rajshahi,+Bangladesh",
-    icon: MapPin,
-    iconColor: "text-blue-400",
-    hasButton: false,
-  },
-];
+  const contactDetails = [
+    {
+      id: 1,
+      title: "DIRECT EMAIL",
+      value: "coderootbdofficial24@gmail.com",
+      link: "mailto:coderootbdofficial24@gmail.com",
+      icon: Mail,
+      iconColor: "text-cyan-400",
+      hasButton: false,
+    },
+    {
+      id: 2,
+      title: "PHONE CALL",
+      value: "+8801308477409",
+      link: "tel:+8801308477409",
+      icon: Phone,
+      iconColor: "text-purple-400",
+      hasButton: false,
+    },
+    {
+      id: 3,
+      title: "WHATSAPP CHAT",
+      value: "+8801308477409",
+      link: "https://wa.me/8801308477409",
+      icon: MessageCircle,
+      iconColor: "text-emerald-400",
+      hasButton: true,
+      buttonText: "Chat",
+    },
+    {
+      id: 4,
+      title: "LOCATION",
+      value: "Pabna, Rajshahi, Bangladesh",
+      link: "https://maps.google.com/?q=Pabna,+Rajshahi,+Bangladesh",
+      icon: MapPin,
+      iconColor: "text-blue-400",
+      hasButton: false,
+    },
+  ];
 
   return (
-    <div id='contact' className=" bg-[#080d1a] text-white flex flex-col items-center justify-center p-6 md:p-12 font-sans">
+    <div
+      id="contact"
+      className=" bg-[#080d1a] text-white flex flex-col items-center justify-center p-6 md:p-12 font-sans"
+    >
       {/* Header Section */}
       <div className="text-center mb-12">
         <span className="text-cyan-400 text-xs font-bold tracking-widest uppercase">
@@ -54,7 +57,8 @@ const contactDetails = [
           Let&apos;s Work Together
         </h1>
         <p className="text-slate-400 text-sm md:text-base mt-3 max-w-lg mx-auto">
-          Have a project in mind, a question, or just want to say hi? Drop me a message below!
+          Have a project in mind, a question, or just want to say hi? Drop me a
+          message below!
         </p>
         <div className="w-16 h-1 bg-gradient-to-r from-cyan-400 to-purple-600 rounded-full mx-auto mt-4"></div>
       </div>
@@ -66,47 +70,47 @@ const contactDetails = [
             const IconComponent = item.icon;
             return (
               <div
-  key={item.id}
-  className="flex items-center justify-between p-5 rounded-2xl bg-[#111927] border border-slate-800/80 transition shadow-lg hover:border-cyan-400"
->
-  <div className="flex items-center gap-4">
-    <div className="w-12 h-12 rounded-xl bg-[#172234] flex items-center justify-center shrink-0">
-      <IconComponent className={`w-5 h-5 ${item.iconColor}`} />
-    </div>
-    <div>
-      <h4 className="text-[11px] font-semibold text-slate-400 tracking-wider uppercase">
-        {item.title}
-      </h4>
-      
-      {/* Click korle mailto: ba tel: trigger korbe */}
-      {item.link ? (
-        <a
-          href={item.link}
-          className="text-sm font-bold text-white mt-0.5 break-all hover:text-cyan-300 transition block"
-        >
-          {item.value}
-        </a>
-      ) : (
-        <p className="text-sm font-bold text-white mt-0.5 break-all">
-          {item.value}
-        </p>
-      )}
-    </div>
-  </div>
+                key={item.id}
+                className="flex items-center justify-between p-5 rounded-2xl bg-[#111927] border border-slate-800/80 transition shadow-lg hover:border-cyan-400"
+              >
+                <div className="flex items-center gap-4">
+                  <div className="w-12 h-12 rounded-xl bg-[#172234] flex items-center justify-center shrink-0">
+                    <IconComponent className={`w-5 h-5 ${item.iconColor}`} />
+                  </div>
+                  <div>
+                    <h4 className="text-[11px] font-semibold text-slate-400 tracking-wider uppercase">
+                      {item.title}
+                    </h4>
 
-  {item.hasButton && (
-    <a
-      href="https://wa.me/8801308477409"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      <button className="flex items-center gap-1.5 px-3.5 py-1.5 text-xs font-medium rounded-full bg-emerald-950/80 text-emerald-400 border border-emerald-500/30 transition ml-2 shrink-0 hover:bg-emerald-500 hover:text-white cursor-pointer">
-        {item.buttonText}
-        <Send className="w-3 h-3" />
-      </button>
-    </a>
-  )}
-</div>
+                    {/* Click korle mailto: ba tel: trigger korbe */}
+                    {item.link ? (
+                      <a
+                        href={item.link}
+                        className="text-sm font-bold text-white mt-0.5 break-all hover:text-cyan-300 transition block"
+                      >
+                        {item.value}
+                      </a>
+                    ) : (
+                      <p className="text-sm font-bold text-white mt-0.5 break-all">
+                        {item.value}
+                      </p>
+                    )}
+                  </div>
+                </div>
+
+                {item.hasButton && (
+                  <a
+                    href="https://wa.me/8801308477409"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center ml-2 shrink-0" // Move layout constraints to the wrapper/link
+                  >
+                    <button className="flex items-center gap-1.5 px-4 py-2 min-h-[32px] text-xs font-medium rounded-full bg-emerald-950/80 text-emerald-400 border border-emerald-500/30 transition hover:bg-emerald-500 hover:text-white cursor-pointer">
+                      Chat
+                    </button>
+                  </a>
+                )}
+              </div>
             );
           })}
         </div>

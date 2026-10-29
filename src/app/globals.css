@@ -141,19 +141,3 @@
   }
 }
 
-
-@keyframes blink {
-  50% {
-    opacity: 0;
-  }
-}
-
-.typing-cursor {
-  display: inline-block;
-  width: 2px;
-  height: 1em;
-  margin-left: 4px;
-  background-color: #06b6d4;
-  vertical-align: -2px;
-  animation: blink 0.8s step-end infinite;
-}
