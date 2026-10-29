@@ -1,8 +1,8 @@
 "use client";
 import Image from "next/image";
 import React from "react";
-import { FaDownload, FaArrowRight, FaReact, FaNodeJs } from "react-icons/fa";
-import { Cursor, Typewriter, useTypewriter } from "react-simple-typewriter";
+import { FaDownload, FaArrowRight } from "react-icons/fa";
+import { Cursor, useTypewriter } from "react-simple-typewriter";
 
 const heroContent = {
   badge: "AVAILABLE FOR NEW OPPORTUNITIES",
@@ -29,12 +29,14 @@ const Hero = () => {
     delaySpeed: 1500,
   });
   return (
-    <section id="home" className="relative overflow-hidden bg-[#0F172A]">
+    <section id="home" className="relative overflow-hidden bg-[#0F172A]  border-b border-gray-800 ">
+
+        
       {/* Background glows */}
       <div className="pointer-events-none absolute -top-40 -left-40 w-[420px] h-[420px] rounded-full bg-cyan-500/10 blur-[120px]" />
-      <div className="pointer-events-none absolute -bottom-40 -right-20 w-[420px] h-[420px] rounded-full bg-purple-600/10 blur-[120px]" />
+      <div className="pointer-events-none absolute -bottom-40 -right-20 w-[420px] h-[420px] rounded-full bg-purple-600/2 blur-[120px]" />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-28">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 xl:py-29">
         <div className="grid lg:grid-cols-2 gap-14 items-center">
           {/* Left content */}
           <div>
@@ -93,7 +95,7 @@ const Hero = () => {
           <div className="flex justify-center lg:justify-end">
             <div className="relative">
               {/* Outer glow */}
-              <div className="absolute -inset-6 rounded-full bg-gradient-to-tr from-cyan-500/30 via-purple-500/20 to-cyan-500/30 blur-3xl" />
+              <div className="absolute -inset-4 rounded-full bg-gradient-to-tr from-cyan-500/30 via-purple-500/20 to-cyan-500/30 blur-3xl" />
 
               {/* Gradient ring + photo */}
               <div className="relative w-72 h-72 sm:w-96 sm:h-96 rounded-full p-1.5 bg-gradient-to-br from-[#06b6d4] via-slate-700 to-[#8b5cf6] shadow-[0_0_60px_rgba(6,182,212,0.3)] ">
@@ -111,6 +113,7 @@ const Hero = () => {
           </div>
         </div>
       </div>
+      
     </section>
   );
 };
