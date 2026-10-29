@@ -75,7 +75,7 @@ const Hero = () => {
             {/* Buttons */}
             <div className="mt-9 flex flex-wrap items-center gap-4">
               <a
-                href="/resume.pdf"
+                href="/Resume.pdf"
                 download="resume.pdf"
                 className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-[#06b6d4] to-[#8b5cf6] text-white text-sm font-semibold shadow-lg shadow-cyan-500/25 hover:shadow-cyan-500/40 hover:-translate-y-0.5 transition-all"
               >

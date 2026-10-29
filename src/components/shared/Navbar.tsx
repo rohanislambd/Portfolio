@@ -90,7 +90,7 @@ const Navbar = () => {
           <div className="flex items-center gap-3">
             <a 
               download='resume.pdf'
-              href="/resume.pdf"
+              href="/Resume.pdf"
             >
               <button className="relative inline-flex items-center justify-center p-0.5 overflow-hidden text-sm font-medium rounded-xl group bg-gradient-to-br from-cyan-500 to-purple-600 group-hover:from-cyan-500 group-hover:to-purple-600 hover:text-white text-white shadow-lg shadow-cyan-500/20 transition-all active:scale-95">
                 <span className="relative px-4 py-2 transition-all ease-in duration-75 rounded-lg bg-slate-900 group-hover:bg-transparent flex items-center gap-2">
